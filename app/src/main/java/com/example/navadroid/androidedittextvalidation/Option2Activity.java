@@ -72,6 +72,37 @@ public class Option2Activity extends AppCompatActivity implements TextWatcher, V
             etName.setError("Required");
             isValidated = false;
         }
+        else if(!(etName.getText().toString().matches("^[A-Za-z0-9 ]{1,40}$"))){
+            etName.setError("Wrong format");
+            isValidated = false;
+        }
+
+        if (etPwd.getText().toString().length() == 0) {
+            etPwd.setError("Required");
+            isValidated = false;
+        }
+        else if(!(etPwd.getText().toString().matches("^[A-Za-z0-9]{1,40}$"))){
+            etPwd.setError("Wrong format");
+            isValidated = false;
+        }
+
+        if (etEmail.getText().toString().length() == 0) {
+            etEmail.setError("Required");
+            isValidated = false;
+        }
+        else if(!(etEmail.getText().toString().matches("^[A-Za-z0-9]{1,40}[@]{1}[A-za-z0-9]{1,10}[.]{1}[A-Za-z]{3}$"))){
+            etEmail.setError("Wrong format");
+            isValidated = false;
+        }
+
+        if (etPhone.getText().toString().length() == 0) {
+            etPhone.setError("Required");
+            isValidated = false;
+        }
+        else if(!(etPhone.getText().toString().matches("^[0]{1}[0-9]{9}$"))){
+            etPhone.setError("Wrong format");
+            isValidated = false;
+        }
         // TODO: add your EditText validation here
 
         return isValidated;
